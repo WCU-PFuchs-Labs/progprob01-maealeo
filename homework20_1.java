@@ -19,7 +19,31 @@ public class homework20_1
 {
    public static void main(String[] args)
    {
-      //add your code here
+      LinkedList llist = new LinkedList(); 
+
+      //create a scanner to read input from console 
+      Scanner scanner = new Scanner(System.in); 
+      System.out.println("Please enter five integers");
+
+      //loop through to read five integers 
+      for(int i = 0; i < 5; i++){
+         System.out.println("Enter integer " + (i + 1) + ": ");
+         //read the integer and add it to the linked list 
+         int number = scanner.nextInt(); 
+
+         ListNode newNode = new ListNode(number); 
+         if(llist.head == null){
+            llist.head = newNode; 
+         } else{
+            ListNode current = llist.head; 
+            while(current.next != null){
+               current = current.next;
+            }
+            current.next = newNode; 
+         }
+         }
+      scanner.close(); 
+      System.out.println(llist.toString()); 
    
    }
    public static void deleteDuplicates(LinkedList llist)
